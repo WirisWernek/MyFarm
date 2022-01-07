@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/db_connect.php';
+require_once '../../includes/db_connect.php';
 if(isset($_POST['btn-cadastrar'])){
     $nome = mysqli_escape_string($connect, $_POST['nome']);
     $pai =  mysqli_escape_string($connect, $_POST['pai']);;
@@ -13,10 +13,10 @@ if(isset($_POST['btn-cadastrar'])){
 
     if(mysqli_query($connect, $sql)){
         $_SESSION['mensagem']= "Cadastrado com sucesso!";
-        header('Location: ../index.php');
+        header('Location: ../../index.php');
     }else{
         $_SESSION['mensagem']= "Erro ao cadastrar!";
-        header('Location: ../index.php');
+        header('Location: ../../index.php');
     }
 }
 ?>
