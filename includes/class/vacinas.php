@@ -68,8 +68,5 @@ class Vacina{
             echo $this->connect->error;
         }
     }
-    public function Listar()
-    {
 
-    }
 }

@@ -119,8 +119,4 @@ class Animal
         }
 
     }
-    public function Listar()
-    {
-
-    }
 }
