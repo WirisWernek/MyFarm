@@ -41,7 +41,7 @@ require_once '../includes/db_connect.php';
                                 <p>Tem certeza que deseja excluir esse registro?</p>
                             </div>
                             <div class="modal-footer">
-                                <form action="./actions_vacinar/delete.php" method="POST">
+                                <form action="./actions_vacinar/actions.php" method="POST">
                                     <input type="hidden" name="id" value="<?php echo $dados['IDVacinado']; ?>">
                                     <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
                                     <a href="#!" class="modal-close waves-effect waves-green btn">Cancelar</a>

@@ -7,7 +7,7 @@ include_once'../includes/db_connect.php';
     <div class="row">
         <div class="col s12 m6 push-m3">
             <h3 class="light">Cadastrar Vacina</h3>
-            <form action="./actions_vacinar/update.php" method="post">
+            <form action="./actions_vacinar/actions.php" method="post">
             <label for="animal">Animal</label>
             <select name="animal" id="animal">
                 <option value="">Selecione um valor</option>
