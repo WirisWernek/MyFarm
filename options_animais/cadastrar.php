@@ -5,7 +5,7 @@ include_once'../includes/header.php';
 <div class="row"><div class="row">
     <div class="col s12 m6 push-m3">
         <h3 class="light">Cadastrar Animal</h3>
-        <form action="./actions_animais/register.php" method="post">
+        <form action="./actions_animais/actions.php" method="post">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome"><br>
 

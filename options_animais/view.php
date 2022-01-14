@@ -45,7 +45,7 @@ require_once '../includes/db_connect.php';
                                 </div>
                                     <div class="modal-footer">
                                     
-                                    <form action="./actions_animais/delete.php" method="POST">
+                                    <form action="./actions_animais/actions.php" method="POST">
                                         <input type="hidden" name="id" value="<?php echo $dados['id_animal']; ?>">
                                         <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
                                         <a href="#!" class="modal-close waves-effect waves-green btn">Cancelar</a>

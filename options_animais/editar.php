@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
 <div class="row">
     <div class="col s12 m6 push-m3">
         <h3 class="light">Editar Animal</h3>
-        <form action="./actions_animais/update.php" method="post">
+        <form action="./actions_animais/actions.php" method="post">
             <input type="hidden" name="id" id="id" value="<?php echo $dados['id_animal']; ?>">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome" value="<?php echo $dados['nome_animal']; ?>"><br>
