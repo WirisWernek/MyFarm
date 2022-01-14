@@ -25,7 +25,7 @@ class Vacina{
 
     public function getDescricao()
     {
-        return $this->$descricao;
+        return $this->descricao;
     }
     public function setDescricao($descricao)
     {
