@@ -32,22 +32,22 @@ if (mysqli_num_rows($resultado) > 0):
         echo '<td><a href="#modal' . $dados['IDVacinado'] . '" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>';
         echo "</tr>";
         ?>
-						            <!-- Modal Structure -->
-						            <div id="modal<?php echo $dados['IDVacinado']; ?>" class="modal">
-						                    <div class="modal-content">
-						                        <h4>Opa!</h4>
-						                        <p>Tem certeza que deseja excluir esse registro?</p>
-						                    </div>
-						                    <div class="modal-footer">
-						                        <form action="./actions_vacinar/actions.php" method="POST">
-						                            <input type="hidden" name="id" value="<?php echo $dados['IDVacinado']; ?>">
-						                            <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
-						                            <a href="#!" class="modal-close waves-effect waves-green btn">Cancelar</a>
-						                        </form>
-						                    </div>
-						                </div>
-						            </tr>
-						        <?php
+		    <!-- Modal Structure -->
+		    <div id="modal<?php echo $dados['IDVacinado']; ?>" class="modal">
+		            <div class="modal-content">
+		                <h4>Opa!</h4>
+		                <p>Tem certeza que deseja excluir esse registro?</p>
+		            </div>
+		            <div class="modal-footer">
+		                <form action="./actions_vacinar/actions.php" method="POST">
+		                    <input type="hidden" name="id" value="<?php echo $dados['IDVacinado']; ?>">
+		                    <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
+		                    <a href="#!" class="modal-close waves-effect waves-green btn">Cancelar</a>
+		                </form>
+		            </div>
+		        </div>
+		    </tr>
+		<?php
     endwhile;
 else:
 ?>
@@ -66,5 +66,5 @@ else:
     </div>
 </div>
 <?php
-include_once '../includes/footer.php';
+require_once '../includes/footer.php';
 ?>

@@ -1,6 +1,5 @@
 <?php
-
-include_once'../includes/header.php';
+require_once '../includes/header.php';
 ?>
 <div class="row">
     <div class="row">
@@ -15,11 +14,11 @@ include_once'../includes/header.php';
 
                 <input class="btn green" type="submit" value="Cadastrar" name="btn-cadastrar">
                 <a class="btn blue"  style="color: #fff;text-decoration: none;" href="../index.php">Home</a>
-                
+
             </form>
         </div>
     </div>
 </div>
 <?php
-include_once'../includes/footer.php';
+require_once '../includes/footer.php';
 ?>

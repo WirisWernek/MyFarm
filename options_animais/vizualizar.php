@@ -19,7 +19,7 @@ require_once '../includes/message.php';
                 </tr>
                 </thead>
                 <tbody>
-                    <?php
+<?php
 
 $sql = "SELECT * FROM tb_animais";
 $resultado = mysqli_query($connect, $sql);
@@ -38,35 +38,35 @@ if (mysqli_num_rows($resultado) > 0):
         echo '<td><a href="./editar.php?id=' . $dados['id_animal'] . '" class="btn-floating orange"><i class="material-icons">edit</i></a></td>';
         echo '<td><a href="#modal' . $dados['id_animal'] . '" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>';
         ?>
-		                        <!-- Modal Structure -->
-		                        <div id="modal<?php echo $dados['id_animal']; ?>" class="modal">
-		                                <div class="modal-content">
-		                                    <h4>Opa!</h4>
-		                                    <p>Tem certeza que deseja excluir esse registro?</p>
-		                                </div>
-		                                    <div class="modal-footer">
+				<!-- Modal Structure -->
+				<div id="modal<?php echo $dados['id_animal']; ?>" class="modal">
+				        <div class="modal-content">
+				            <h4>Opa!</h4>
+				            <p>Tem certeza que deseja excluir esse registro?</p>
+				        </div>
+				            <div class="modal-footer">
 
-		                                    <form action="./actions_animais/actions.php" method="POST">
-		                                        <input type="hidden" name="id" value="<?php echo $dados['id_animal']; ?>">
-		                                        <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
-		                                        <a href="#!" class="modal-close waves-effect waves-green btn">Cancelar</a>
-		                                    </form>
-		                                </div>
-		                            </div>
-		                        </tr>
-		        <?php
+				            <form action="./actions_animais/actions.php" method="POST">
+				                <input type="hidden" name="id" value="<?php echo $dados['id_animal']; ?>">
+				                <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
+				                <a href="#!" class="modal-close waves-effect waves-green btn">Cancelar</a>
+				            </form>
+				        </div>
+				    </div>
+				</tr>
+				<?php
     endwhile;
 else:
 ?>
-                        <tr>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                <?php endif;?>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+            <?php endif;?>
                 </tbody>
             </table>
             <br>
@@ -78,5 +78,5 @@ else:
 
 
 <?php
-include_once '../includes/footer.php';
+require_once '../includes/footer.php';
 ?>

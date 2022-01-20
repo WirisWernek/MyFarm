@@ -1,8 +1,8 @@
 <?php
-include_once '../includes/header.php';
-include_once '../includes/db_connect.php';
+require_once '../includes/header.php';
+require_once '../includes/db_connect.php';
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = mysqli_escape_string($connect, $_GET['id']);
     $sql = "SELECT * FROM tb_vacinas WHERE id_vacina = '$id'";
     $resultado = mysqli_query($connect, $sql);
@@ -16,7 +16,7 @@ if(isset($_GET['id'])){
 
     <form action="./actions_vacinas/actions.php" method="post">
         <input type="hidden" name="id" id="id" value="<?php echo $dados['id_vacina']; ?>">
-        
+
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" value="<?php echo $dados['nome_vacina']; ?>"><br>
 
@@ -32,5 +32,5 @@ if(isset($_GET['id'])){
 
 
 <?php
-include_once '../includes/footer.php';
+require_once '../includes/footer.php';
 ?>
