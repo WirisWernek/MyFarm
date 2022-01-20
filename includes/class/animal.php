@@ -2,15 +2,15 @@
 
 class Animal
 {
-    public $nome;
-    public $pai;
-    public $mae;
-    public $data_nascimento;
-    public $sexo;
-    public $raca;
-    public $id;
-    public $data;
-    public $connect;
+    private $nome;
+    private $pai;
+    private $mae;
+    private $data_nascimento;
+    private $sexo;
+    private $raca;
+    private $id;
+    private $data;
+    private $connect;
 
     public function __construct($id, $nome, $pai, $mae, $data_nascimento, $sexo, $raca)
     {
@@ -18,11 +18,11 @@ class Animal
         $this->connect->set_charset("utf8");
         $this->id = $this->connect->escape_string($id);
         $this->nome = $this->connect->escape_string($nome);
-        $this->pai =  $this->connect->escape_string($pai);
-        $this->mae =  $this->connect->escape_string($mae);
-        $this->data_nascimento = $this->connect->escape_string($data_nascimento);// new DateTime($data_nascimento);
-        $this->sexo =  $this->connect->escape_string($sexo);
-        $this->raca =  $this->connect->escape_string($raca);
+        $this->pai = $this->connect->escape_string($pai);
+        $this->mae = $this->connect->escape_string($mae);
+        $this->data_nascimento = $this->connect->escape_string($data_nascimento); // new DateTime($data_nascimento);
+        $this->sexo = $this->connect->escape_string($sexo);
+        $this->raca = $this->connect->escape_string($raca);
     }
     public function getNome()
     {
@@ -85,7 +85,7 @@ class Animal
 
         if ($this->connect->query($sql)) {
             $_SESSION['mensagem'] = "Cadastrado com sucesso!";
-            header('Location: ../../index.php');
+            header('Location: ../../options_animais/vizualizar.php');
         } else {
             $_SESSION['mensagem'] = "Erro ao cadastrar!";
             echo $this->connect->error;
@@ -96,10 +96,10 @@ class Animal
     public function Atualizar()
     {
         $sql = "UPDATE tb_animais SET nome_animal = '$this->nome', pai_animal = '$this->pai', mae_animal = '$this->mae', data_nascimento_animal = '$this->data_nascimento', sexo_animal ='$this->sexo', raca_animal = '$this->raca'  WHERE id_animal='$this->id';";
-        if($this->connect->query($sql)){
-            $_SESSION['mensagem']= "Atualizado com sucesso!";
-            header('Location: ../../index.php');
-        }else{
+        if ($this->connect->query($sql)) {
+            $_SESSION['mensagem'] = "Atualizado com sucesso!";
+            header('Location: ../../options_animais/vizualizar.php');
+        } else {
             $_SESSION['mensagem'] = "Erro ao Atualizar!";
             echo $this->connect->error;
             // header('Location: ../../index.php');
@@ -109,11 +109,11 @@ class Animal
     {
         $sql = "DELETE FROM tb_animais WHERE id_animal = '$this->id'";
 
-        if($this->connect->query($sql)){
-            $_SESSION['mensagem']= "Excluído com sucesso!";
-            header('Location: ../../index.php');
-        }else{
-            $_SESSION['mensagem']= "Erro ao Excluir!";
+        if ($this->connect->query($sql)) {
+            $_SESSION['mensagem'] = "Excluído com sucesso!";
+            header('Location: ../../options_animais/vizualizar.php');
+        } else {
+            $_SESSION['mensagem'] = "Erro ao Excluir!";
             echo $this->connect->error;
             // header('Location: ../../index.php');
         }

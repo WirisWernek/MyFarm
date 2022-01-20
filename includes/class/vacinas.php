@@ -1,10 +1,11 @@
 <?php
 
-class Vacina{
-    public $nome;
-    public $descricao;
-    public $id;
-    public $connect;
+class Vacina
+{
+    private $nome;
+    private $descricao;
+    private $id;
+    private $connect;
 
     public function __construct($id, $nome, $descricao)
     {
@@ -12,7 +13,7 @@ class Vacina{
         $this->connect->set_charset("utf8");
         $this->id = $this->connect->escape_string($id);
         $this->nome = $this->connect->escape_string($nome);
-        $this->descricao =  $this->connect->escape_string($descricao);
+        $this->descricao = $this->connect->escape_string($descricao);
     }
     public function getNome()
     {
@@ -36,11 +37,11 @@ class Vacina{
     {
         $sql = "INSERT INTO tb_vacinas(nome_vacina, descricao_vacina) VALUES('$this->nome', '$this->descricao')";
 
-        if($this->connect->query($sql)){
-            $_SESSION['mensagem']= "Cadastrado com sucesso!";
-            header('Location: ../../index.php');
-        }else{
-            $_SESSION['mensagem']= "Erro ao cadastrar!";
+        if ($this->connect->query($sql)) {
+            $_SESSION['mensagem'] = "Cadastrado com sucesso!";
+            header('Location: ../../options_vacinas/vizualizar.php');
+        } else {
+            $_SESSION['mensagem'] = "Erro ao cadastrar!";
             echo $this->connect->error;
         }
     }
@@ -48,11 +49,11 @@ class Vacina{
     public function Atualizar()
     {
         $sql = "UPDATE tb_vacinas SET nome_vacina = '$this->nome', descricao_vacina = '$this->descricao' WHERE id_vacina='$this->id';";
-        if($this->connect->query($sql)){
-            $_SESSION['mensagem']= "Atualizado com sucesso!";
-            header('Location: ../../index.php');
-        }else{
-            $_SESSION['mensagem']= "Erro ao Atualizar!";
+        if ($this->connect->query($sql)) {
+            $_SESSION['mensagem'] = "Atualizado com sucesso!";
+            header('Location: ../../options_vacinas/vizualizar.php');
+        } else {
+            $_SESSION['mensagem'] = "Erro ao Atualizar!";
             echo $this->connect->error;
         }
     }
@@ -60,11 +61,11 @@ class Vacina{
     {
         $sql = "DELETE FROM tb_vacinas WHERE id_vacina = '$this->id'";
 
-        if($this->connect->query($sql)){
-            $_SESSION['mensagem']= "Excluído com sucesso!";
-            header('Location: ../../index.php');
-        }else{
-            $_SESSION['mensagem']= "Erro ao Excluir!";
+        if ($this->connect->query($sql)) {
+            $_SESSION['mensagem'] = "Excluído com sucesso!";
+            header('Location: ../../options_vacinas/vizualizar.php');
+        } else {
+            $_SESSION['mensagem'] = "Erro ao Excluir!";
             echo $this->connect->error;
         }
     }
