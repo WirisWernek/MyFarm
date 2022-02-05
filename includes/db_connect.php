@@ -1,14 +1,13 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/env.php';
+$usuario = $user;
+$senha = $password;
+$banco = $db;
+$endereco = $server;
 
-$servername="localhost";
-$username="wiris";
-$password="1+1Wiris1+1";
-$db_name="MyFarm";
-
-$connect = mysqli_connect($servername, $username, $password, $db_name);
+$connect = mysqli_connect($endereco, $usuario, $senha, $banco);
 mysqli_set_charset($connect, "utf8");
 
-if(mysqli_connect_error()) {
+if (mysqli_connect_error()) {
     echo "Erro na conexão: " . mysqli_connect_error();
 }
-?>
