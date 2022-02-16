@@ -35,7 +35,7 @@ class Animal
 
     public function getPai()
     {
-        return $this->$pai;
+        return $this->pai;
     }
     public function setPai($pai)
     {
@@ -117,6 +117,5 @@ class Animal
             echo $this->connect->error;
             // header('Location: ../../index.php');
         }
-
     }
 }
