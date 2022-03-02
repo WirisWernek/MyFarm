@@ -1,5 +1,4 @@
 <?php
-
 class Conexao
 {
     private static $senha = "";
@@ -25,7 +24,3 @@ class Conexao
         return self::$connection;
     }
 }
-
-
-$teste = new Conexao();
-$teste = $teste->Conectar();
