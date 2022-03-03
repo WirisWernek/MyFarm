@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/class/Conexao.php';
+
 class Animal
 {
     private $nome;
